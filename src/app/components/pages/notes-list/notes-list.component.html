@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="serch-bar">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        (keyup)="filter($any($event.target).value)"
+        pInputText
+        placeholder="Serch"
+      />
+    </span>
+  </div>
+
+  <div class="notes-list">
+    <app-note-card
+      *ngFor="let note of filteredNotes; index as i"
+      [link]="i"
+      (delete)="deleteNote(i)"
+      [title]="note.title"
+      [body]="note.body"
+    ></app-note-card>
+  </div>
+
+  <p-button label="+ New" routerLink="details"></p-button>
+</div>

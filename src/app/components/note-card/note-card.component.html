@@ -1,0 +1,17 @@
+<div #container class="note-card">
+  <p-card header="{{ title }}" [style]="{ width: '360px' }">
+    <p>
+      {{ body }}
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button label="Edit" [routerLink]="[link]"></p-button>
+      <p-button
+        label="Delete"
+        icon="pi pi-times"
+        styleClass="p-button-secondary"
+        [style]="{ 'margin-left': '.5em' }"
+        (click)="onDelete()"
+      ></p-button>
+    </ng-template>
+  </p-card>
+</div>
